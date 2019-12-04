@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Consult Conductor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+	<div class="container my-5">
+		<h2 class="mb-5">Conductor</h2>
+
+		<div class="row">
+			<div class="col-md-6">
+
+				<p th:text="'Cédula: ' + ${tmio1Conductore.cedula}" />
+				<p th:text="'Nombre: ' + ${tmio1Conductore.nombre}" />
+				<p th:text="'Apellidos: ' + ${tmio1Conductore.apellidos}" />
+				<p th:text="'Fecha Nacimiento: ' + ${tmio1Conductore.fechaNacimiento}" />
+				<p th:text="'Fecha Contratación: ' + ${tmio1Conductore.fechaContratacion}" />
+				
+
+				<div class="row">
+
+					<p>
+						<a href="/conductores"><i class="fas fa-home ml-2"></i> Volver</a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

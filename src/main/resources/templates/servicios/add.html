@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add User</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+	<div class="container my-5">
+		<h2 class="mb-5">Nuevo Servicio</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<form action="#" th:action="@{/servicios/add-servicio/}"
+					th:object="${tmio1Servicio}" method="post">
+					<div class="row">
+
+						<div class="form-group col-md-6">
+							<label for="tmioFechaInicio" class="col-form-label">Fecha
+								Inicio</label> <input type="date" th:field="*{tmioFechaInicio}"
+								class="form-control" id="tmioFechaInicio"
+								placeholder="Fecha Incio"> <span
+								th:if="${#fields.hasErrors('tmioFechaInicio')}"
+								th:errors="*{tmioFechaInicio}" class="text-danger"></span>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="tmioFechaFin" class="col-form-label">Fecha
+								Fin</label> <input type="date" th:field="*{tmioFechaFin}"
+								class="form-control" id="tmioFechaFin" placeholder="Fecha Fin">
+							<span th:if="${#fields.hasErrors('tmioFechaFin')}"
+								th:errors="*{tmioFechaFin}" class="text-danger"></span>
+						</div>
+						
+						<div class="form-group col-md-6">
+							<label for="tmio1Bus" class="col-form-label">Bus</label> <select
+								class="form-control-range" th:field="*{tmio1Bus}">
+								<option th:each="bs : ${buses}" th:value="${bs.id}"
+									class="form-control" th:text="${bs.placa}"
+									th:selected="${tmio1Servicio.tmio1Bus=bs}"></option>
+							</select>
+						</div>
+						
+						<div class="form-group col-md-6">
+							<label for="tmio1Conductore" class="col-form-label">Conductor</label> <select
+								class="form-control-range" th:field="*{tmio1Conductore}">
+								<option th:each="cn : ${conductores}" th:value="${cn.cedula}"
+									class="form-control" th:text="${cn.cedula}"
+									th:selected="${tmio1Servicio.tmio1Conductore=cn}"></option>
+							</select>
+						</div>
+						
+						<div class="form-group col-md-6">
+							<label for="tmio1Ruta" class="col-form-label">Ruta</label> <select
+								class="form-control-range" th:field="*{tmio1Ruta}">
+								<option th:each="rt : ${rutas}" th:value="${rt.id}"
+									class="form-control" th:text="${rt.numero}"
+									th:selected="${tmio1Servicio.tmio1Ruta=rt}"></option>
+							</select>
+						</div>
+						
+						<div></div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mt-3">
+							<input type="submit" name="action" class="btn btn-primary"
+								value="Agregar Servicio">
+						</div>
+						<div class="col-md-3 mt-3">
+							<input type="reset" class="btn btn-secondary" value="Limpiar">
+						</div>
+						<div class="col-md-3 mt-3">
+							<input type="submit" name="action" class="btn btn-secondary"
+								value="Cancel">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

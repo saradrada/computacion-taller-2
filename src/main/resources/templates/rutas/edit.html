@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Update User</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+
+	<div class="container my-5">
+		<h2 class="mb-5">Ruta</h2>
+
+		<div class="row">
+			<div class="col-md-6">
+
+				<p th:text="'id: ' + ${tmio1Ruta.id}" />
+				<p th:text="'Número: ' + ${tmio1Ruta.numero}" />
+				<p th:text="'Activa: ' + ${tmio1Ruta.activa}" />
+				<p th:text="'Descripción: ' + ${tmio1Ruta.descripcion}" />
+				<p th:text="'Dia inicio: ' + ${tmio1Ruta.diaInicio}" />
+				<p th:text="'Dia fin: ' + ${tmio1Ruta.diaFin}" />
+				<p th:text="'Hora inicio: ' + ${tmio1Ruta.horaInicio}" />
+				<p th:text="'Hora fin: ' + ${tmio1Ruta.horaFin}" />
+				
+				
+				
+								
+								
+								
+				<div class="row">
+
+					<p>
+						<a href="/rutas"><i class="fas fa-home ml-2"></i> Volver</a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
